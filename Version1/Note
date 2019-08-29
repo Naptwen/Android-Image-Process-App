@@ -1,0 +1,42 @@
+@This Version includes the various list of Mask, Blur, GrayScale and Non-Maximum Suppression.
+@Appliying step: 1. Turn on the Camera. 2. Capture Image. 3.Blur (or not) 4. Set the Mask. 5. Click Non max 
+
+@Grayscale is the average method.
+Gray = (R+G+B)/3
+
+@Blur algorithm uses 5x5 Matrix and average method is used (not the Guassian filter).
+1. Picked on the pixel of the image.
+2. Get 5x5 Matrix Color values, including the picked pixel and surrounded pixels then find the total sum of each value of RGB.
+3. Divide it by 25. Therefore, we can get the average color value of the pixel.
+4. Set the color of the pixel of the picked pixel as the average of this.
+
+@These are the matrix of Mask list
+Non-mask default 
+|1  1  1|
+|1  1  1|
+|1  1  1|
+Prewill Mask set 
+|-1  0  1|  |-1 -1 -1|
+|-1  0  1|  |0   0  0|
+|-1  0  1|  |1   1  1|
+Sobel Mask set
+|-1  0  1|  |-1 -2 -1|
+|-2  0  2|  |0   0  0|
+|-1  0  1|  |1   2  1|
+Robert Cross Mask set
+| 1   0  0|  | 0   0  1|
+| 0  -1  0|  | 0  -1  0|
+| 0   0  0|  | 0   0  0|
+Laplacian Mask set
+| 0  1  0| | 0  -1   0|
+| 1  4  1| | -1  4  -1|
+| 0  1  0| | 0  -1   0|
+#Remember when calculating the Mask set, it is not calculated as a Matrix multiply, it is directly multiplied with the color values.
+
+@Non-Maximum Suppression
+1. Picking one pixel of the image
+2. Finding the 3x3 Matrix which includes the picked pixel.(You can changed the size of Matrix)
+3. Saving all of the RGB values of pixels from 3x3 Matrix (in this case the gray scale is already applied, so I just picked the Blue value of pixel)
+4. If the picked pixel's value is not the maximum in the Saved RGB values
+-> Saving it in the black dot list.
+5. After detectin all of the pixels, set the pixels, which was saved in the black dot list, as black color.
