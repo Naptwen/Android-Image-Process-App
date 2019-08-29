@@ -1,0 +1,2 @@
+This app includes the different Set of Mask, Blur, and Non-Maximum Suppression Algorithm.
+The speed of process is not applied optimization. so it take usually 2000 ms.
