@@ -177,7 +177,7 @@ public class Image_controller {
         else
             Log.d(TAG, "need get Bitmap");
     }
-    //3. Set the Pixel_gray_list {Pixel_list need}
+    //3. Set the Pixel_gray_list {Pixel_blur_list need}
     public void Bitmap_Gray_scaling() {
         Log.d(TAG, "Gray scale working");
         if (Pixel_blur_list != null) {
