@@ -1,6 +1,5 @@
-I found the wrong algorithm in the Blur Algorithm from previewous scrip.
+I found the wrong algorithm in the Blur Algorithm from previews scrip.
 I fixed it and I made a reduce process for changing the size of bitmap in Bitmap_to_Drawing.
-As using getResizedBitmap function whihc is from 
 https://stackoverflow.com/questions/15759195/reduce-size-of-bitmap-to-some-specified-pixel-in-android. Thank you Divyang Metalia.
-And I changed the Non_Maximum_suppression function's algorithm as anglurar processing algorithm (by using gradient)
+And I changed the Non_Maximum_suppression function's algorithm as angular processing algorithm (by using gradient)
 rather than coordinate matrix masking system.
